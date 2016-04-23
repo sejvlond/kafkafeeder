@@ -1,0 +1,2 @@
+#!/bin/sh
+exec setuidgid kafkafeeder multilog t n20 s10240000 /www/kafkafeeder/self-logs/

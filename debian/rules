@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+PROJECT=github.com/sejvlond/kafkafeeder
+
+TMP_DIR := $(CURDIR)/debian/tmp
+DEST_DIR := $(CURDIR)/debian/build
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	mkdir -p $(TMP_DIR)/src/`dirname ${PROJECT}`
+	ln -s $(CURDIR) $(TMP_DIR)/src/${PROJECT}
+	GOPATH=$(TMP_DIR) GO15VENDOREXPERIMENT=1\
+		glide install
+
+override_dh_auto_build:
+	GOPATH=$(TMP_DIR) GO15VENDOREXPERIMENT=1\
+		go build -o $(DEST_DIR)/kafkafeeder ${PROJECT}
+
+override_dh_auto_test:
+	GOPATH=$(TMP_DIR) GO15VENDOREXPERIMENT=1\
+		go test ${PROJECT}
+
+override_dh_auto_clean:
+	rm -rf $(TMP_DIR)
+	rm -rf $(DEST_DIR)

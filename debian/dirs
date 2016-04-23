@@ -1,0 +1,5 @@
+/www/kafkafeeder/run/cache/checkpoint/
+/www/kafkafeeder/run/cache/logstreamer/
+/www/kafkafeeder/run/conf/
+/www/kafkafeeder/logs/
+/www/kafkafeeder/self-logs/

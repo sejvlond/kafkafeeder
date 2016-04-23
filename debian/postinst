@@ -1,0 +1,30 @@
+set -e
+
+USER_NAME=kafkafeeder
+GROUP_NAME=kafkafeeder
+USER_SHELL=/bin/false
+USER_HOMEDIR=/www/kafkafeeder
+USER_COMMENT=kafkafeeder
+
+. /usr/share/debconf/confmodule
+
+
+case "$1" in
+configure)
+    if ! getent group $USER_NAME >/dev/null; then
+        groupadd $USER_NAME
+        echo "New group $USER_NAME added."
+    fi
+    if ! getent passwd $USER_NAME >/dev/null; then
+        useradd -s "$USER_SHELL" -d "$USER_HOMEDIR" -m -c "$USER_COMMENT" \
+                -g "$USER_NAME" "$USER_NAME"
+        echo "New user $USER_NAME added."
+    fi
+
+    chown -R $USER_NAME:$GROUP_NAME /www/kafkafeeder/self-logs
+    chown -R $USER_NAME:$GROUP_NAME /www/kafkafeeder/run
+
+    update-rc.d kafkafeeder defaults 80 20
+
+    ;;
+esac

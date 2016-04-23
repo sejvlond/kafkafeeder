@@ -1,0 +1,4 @@
+debian/build/kafkafeeder /www/kafkafeeder/bin
+heka/ /www/kafkafeeder/
+conf/ /www/kafkafeeder/
+service/ /www/kafkafeeder/

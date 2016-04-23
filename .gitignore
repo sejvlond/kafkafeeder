@@ -1,0 +1,9 @@
+*.swo
+*.swp
+/debian/files
+/debian/build
+/debian/tmp
+/debian/kafkafeeder*
+/vendor
+/kafkafeeder
+/todo

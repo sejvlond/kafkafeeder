@@ -1,0 +1,21 @@
+hash: c0b809112309f78dbfe4c93ae60d5fdaea4a6fdae05b9c6c08e042e090a1e997
+updated: 2016-04-23T19:09:11.040485099+02:00
+imports:
+- name: github.com/docopt/docopt-go
+  version: 784ddc588536785e7299f7272f39101f7faccc3f
+- name: github.com/golang/snappy
+  version: d1d908a252c22fd7afd36190d5cffb144aa8f777
+- name: github.com/sejvlond/go-kafkalog
+  version: 8ed6c0bca85daa5aa01a0bf129bebbec3eed61e2
+  subpackages:
+  - common
+  - writer
+  - encoder
+  - writer/iowriter
+- name: github.com/sejvlond/kafkalog-logrus
+  version: ba0c1bf24fe938bf9f52c9e3fe03328148938079
+- name: github.com/Sirupsen/logrus
+  version: 081307d9bc1364753142d5962fc1d795c742baaf
+- name: gopkg.in/yaml.v2
+  version: a83829b6f1293c91addabc89d0571c246397bbf4
+devImports: []

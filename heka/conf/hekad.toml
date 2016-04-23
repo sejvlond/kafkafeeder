@@ -1,0 +1,9 @@
+[hekad]
+maxprocs = 1
+base_dir = "/www/kafkafeeder/run/cache/"
+share_dir = "/www/kafkafeeder/heka/share/"
+max_message_size = 1048576
+
+[DashboardOutput]
+address = "0.0.0.0:8796"
+static_directory = "/www/kafkafeeder/heka/share/dasher/"
