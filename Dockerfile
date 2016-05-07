@@ -3,7 +3,8 @@ FROM debian:jessie
 COPY kafkafeeder_*.deb heka_*.deb /tmp/
 
 RUN dpkg -i /tmp/heka_*.deb \
-    && dpkg -i /tmp/kafkafeeder_*.deb
+    && dpkg -i /tmp/kafkafeeder_*.deb \
+    && rm -f /tmp/*deb
 
 VOLUME [ \
     "/www/kafkafeeder/conf/", \
