@@ -69,10 +69,15 @@ func (h *HekadCmd) Start() bool {
 
 func (h *HekadCmd) Stop() {
 	h.ShouldBeRunning = false
+	h.lgr.Infof("Sending SIGTERM to hekad process")
 	err := h.cmd.Process.Signal(syscall.SIGTERM)
 	if err != nil {
-		h.lgr.Errorf("Error killing hekad process %q", err)
-		h.cmd.Process.Kill()
+		h.lgr.Errorf("Error sending SIGTERM to hekad process %q", err)
+		h.lgr.Infof("Sending SIGKILL to hekad process")
+		err = h.cmd.Process.Kill()
+		if err != nil {
+			h.lgr.Errorf("Error sending SIGKILL to hekad process %q", err)
+		}
 	}
 	err = h.cmd.Wait()
 	if err != nil {
