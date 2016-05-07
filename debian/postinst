@@ -24,7 +24,5 @@ configure)
     chown -R $USER_NAME:$GROUP_NAME /www/kafkafeeder/self-logs
     chown -R $USER_NAME:$GROUP_NAME /www/kafkafeeder/run
 
-    update-rc.d kafkafeeder defaults 80 20
-
     ;;
 esac

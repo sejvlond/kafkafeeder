@@ -7,6 +7,3 @@
 /www/kafkafeeder/conf/kafkafeeder.yaml /www/kafkafeeder/self-logs/kafkafeeder.yaml
 /www/kafkafeeder/self-logs/ /www/kafkafeeder/logs/self-logs
 /www/kafkafeeder/self-logs/ /www/logy/www/kafkafeeder
-/usr/bin/svinit /etc/init.d/kafkafeeder
-/www/kafkafeeder/service /service/kafkafeeder
-
