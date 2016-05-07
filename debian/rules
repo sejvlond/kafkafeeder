@@ -16,7 +16,7 @@ override_dh_auto_configure:
 
 override_dh_auto_build:
 	GOPATH=$(TMP_DIR) GO15VENDOREXPERIMENT=1\
-		go build -o $(DEST_DIR)/kafkafeeder ${PROJECT}
+		go build -o $(DEST_DIR)/kafkafeeder -tags=netgo ${PROJECT}
 
 override_dh_auto_test:
 	GOPATH=$(TMP_DIR) GO15VENDOREXPERIMENT=1\
