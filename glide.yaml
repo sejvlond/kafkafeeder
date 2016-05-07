@@ -5,3 +5,6 @@ import:
 - package: gopkg.in/yaml.v2
 - package: github.com/sejvlond/kafkalog-logrus
 - package: github.com/sejvlond/go-kafkalog
+- package: github.com/stretchr/testify
+  subpackages:
+  - assert
